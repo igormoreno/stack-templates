@@ -100,15 +100,15 @@ isEquivalentTo g f f' = prop $ do
 
 testSuite1 :: TestTree
 testSuite1 =
-  testGroup "Tests" [
+  testGroup "Test Suite 1" [
       testGroup "Test cases" [
-        testCase "case 1" $ assertEqual ""
+        testCase "Test case 1" $ assertEqual ""
           1 -- expected
           1
       ]
     , testGroup "Properties" [
         testProperty "property 1" $
-          isEquivalentTo string reverse (reverse . reverse)
+          isEquivalentTo string id (reverse . reverse)
       ]
     ]
 
